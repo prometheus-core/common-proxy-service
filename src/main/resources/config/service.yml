@@ -52,7 +52,7 @@ singletons:
   - com.networknt.oas.validator.impl.XmlValidator
 # HandlerProvider implementation
 - com.networknt.server.HandlerProvider:
-  - PathHandlerProvider
+  - org.prometheus.network.prometheus_proxy.PathHandlerProvider
 # StartupHookProvider implementations, there are one to many and they are called in the same sequence defined.
 # - com.networknt.server.StartupHookProvider:
   # - com.networknt.server.Test1StartupHook
