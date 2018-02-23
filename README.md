@@ -17,7 +17,7 @@
 [![David](https://img.shields.io/david/optional/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 [![David](https://img.shields.io/david/peer/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 
-##Description
+## Description
 Generic both FORWARD and REVERSE proxy in pure Java.
 
 The whole system is in the moment implemented as state of art microservice architecture meaning I follow following core patterns:
@@ -25,7 +25,7 @@ The whole system is in the moment implemented as state of art microservice archi
 - Sagas
 - CQRS
 
-##Features:
+## Features:
 - Support FTP, FTPS, SFTP (Socks5), HTTP and HTTPS protocols
 - Exposes both REST (Open API 3.0 standard) and Websocket endpoints secured with OAuth2 as Management API
 - Proxy user authorization
@@ -37,8 +37,6 @@ The whole system is in the moment implemented as state of art microservice archi
 
 Proxy everything.
 
-
-## Build Status
 
 [travis-home]: https://travis-ci.org/
 [travis-msgpack-tools]: https://travis-ci.org/prometheus-core/common-proxy-service
