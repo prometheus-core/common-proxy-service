@@ -1,24 +1,24 @@
-![Logo](https://github.com/prometheus-core/common-file-management-service/blob/master/docs/_images/prometheus-core-logo.png)
+![Logo](https://github.com/prometheus-core/common-proxy-service/blob/master/docs/_images/prometheus-core-logo.png)
 
 
 # Common Proxy Service - this is reused readme and neet to be customized
 
-[![license](https://img.shields.io/github/license/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
-[![Travis](https://img.shields.io/travis/prometheus-core/common-file-management-service.svg?style=plastic)](https://travis-ci.org/prometheus-core/common-file-management-service/branches)
-[![Github All Releases](https://img.shields.io/github/downloads/prometheus-core/common-file-management-service/total.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
-[![GitHub issues](https://img.shields.io/github/issues/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
+[![license](https://img.shields.io/github/license/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
+[![Travis](https://img.shields.io/travis/prometheus-core/common-proxy-service.svg?style=plastic)](https://travis-ci.org/prometheus-core/common-proxy-service/branches)
+[![Github All Releases](https://img.shields.io/github/downloads/prometheus-core/common-proxy-service/total.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
+[![GitHub issues](https://img.shields.io/github/issues/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 
-[![Codacy grade](https://img.shields.io/codacy/grade/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-file-management-service)
-[![Codacy coverage](https://img.shields.io/codacy/coverage/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-file-management-service)
-[![codecov](https://codecov.io/gh/prometheus-core/common-file-management-service/branch/master/graph/badge.svg?style=plastic)](https://codecov.io/gh/prometheus-core/common-file-management-service/branch/master)
+[![Codacy grade](https://img.shields.io/codacy/grade/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-proxy-service)
+[![Codacy coverage](https://img.shields.io/codacy/coverage/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-proxy-service)
+[![codecov](https://codecov.io/gh/prometheus-core/common-proxy-service/branch/master/graph/badge.svg?style=plastic)](https://codecov.io/gh/prometheus-core/common-proxy-service/branch/master)
 
-[![David](https://img.shields.io/david/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
-[![David](https://img.shields.io/david/dev/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
-[![David](https://img.shields.io/david/optional/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
-[![David](https://img.shields.io/david/peer/prometheus-core/common-file-management-service.svg?style=plastic)](https://github.com/prometheus-core/common-file-management-service)
+[![David](https://img.shields.io/david/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
+[![David](https://img.shields.io/david/dev/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
+[![David](https://img.shields.io/david/optional/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
+[![David](https://img.shields.io/david/peer/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 
 ##Description
-Generic approach to manage any kind of file system objects with support of multiple protocols or filesystems.
+Generic both FORWARD and REVERSE proxy in pure Java.
 
 The whole system is in the moment implemented as state of art microservice architecture meaning I follow following core patterns:
 - Event sourcing
@@ -26,35 +26,30 @@ The whole system is in the moment implemented as state of art microservice archi
 - CQRS
 
 ##Features:
-- Supports common file system object manipulation operation: COPY, CREATE, DELETE, MOVE
-- These atomic operations can be mixed up to complex scenarios in kind of flow diagram to achieve any kind of goal
-- Supports multiple file systems and communication protocols: CIFS(Samba or Windows Share), FTP, FTPS, SFTP (More can and will be added in future)
-- Support generic definition of entity definition, where entity can be single or multiple files or directories even across multiple endpoints
-- Supports both regex and so called CustomObjectMasks which introduce more business usable masks: YYYY, MM, ... (Can be easily extended)
-- Path (directory and/or file) is in the system represented as sequence of multiple objects (Strings, CustomObjectMasks)
-- Built in metrics and auditing
-- Exposes both REST (Open API 3.0 standard) and Websockets endpoints
-- More to be added....
-- Management UI (in scope to be implemented in v)
+- Support FTP, FTPS, SFTP (Socks5), HTTP and HTTPS protocols
+- Exposes both REST (Open API 3.0 standard) and Websocket endpoints secured with OAuth2 as Management API
+- Proxy user authorization
+- Ip address white and black listing
+- Man in the middle attack capabilities on custom levels
+- More to be added....early stage
+- Management UI (low priority)
 ## Use Cases
 
-Copy data from Windows Share to SFTP server
-Archive data, TODO
-
+Proxy everything.
 
 
 ## Build Status
 
 [travis-home]: https://travis-ci.org/
-[travis-msgpack-tools]: https://travis-ci.org/prometheus-core/common-file-management-service
+[travis-msgpack-tools]: https://travis-ci.org/prometheus-core/common-proxy-service
 
-[branch-master]: https://github.com/prometheus-core/common-file-management-service/tree/master
+[branch-master]: https://github.com/prometheus-core/common-proxy-service/tree/master
 
 <!-- we use some deprecated HTML attributes here to get these stupid badges to line up properly -->
 <!--
 | Branch        |  [CI Build][travis-home]           | Coverage           |
 | ------------- |:-------------:|:-------------:|
-| [master] [branch-master]     | [![Build Status](https://travis-ci.org/prometheus-core/common-file-management-service.svg?branch=master)](https://travis-ci.org/prometheus-core/common-file-management-service) |  |
+| [master] [branch-master]     | [![Build Status](https://travis-ci.org/prometheus-core/common-proxy-service.svg?branch=master)](https://travis-ci.org/prometheus-core/common-proxy-service) |  |
 -->
 
 ## Start server
