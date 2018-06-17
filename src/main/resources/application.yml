@@ -14,7 +14,7 @@ management:
     enabled: false
 
 #management.endpoints.web.exposure.include: "*"
-
+---
 socks5Proxy:
   host: localhost
   port: 29001
@@ -23,10 +23,10 @@ socks5Proxy:
   connectionTimeout: 60000
   sslEncryption: false
   restrictions:
-      host-white-list:
+      whiteList:
         - 1.1.1.1
         - 2.2.2.2
-      host-black-list:
+      blackList:
         - 1.2.3.4
         - 5.6.7.8
   authorization:

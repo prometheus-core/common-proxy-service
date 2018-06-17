@@ -1,10 +1,10 @@
 package org.prometheus.infrastructure.proxyservice.config;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NonNull;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -23,11 +23,16 @@ import java.util.List;
 @ToString
 // Spring property readings
 @Configuration
+@EnableConfigurationProperties
 @ConfigurationProperties(prefix = "socks5Proxy")
-public class Socks5ProxyProperties {
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+//@NoArgsConstructor
+//@AllArgsConstructor
+public class Socks5ProxyProperties implements java.io.Serializable, Cloneable{
 
 
     String host;
+
 
     int port;
 
@@ -39,40 +44,35 @@ public class Socks5ProxyProperties {
 
     boolean sslEncryption;
 
-    //Restrictions restrictions;
-    //Authorization authorization;
+   /* @JsonProperty("sslEncryption")
+
+    public boolean getSslEncryption(){
+        return sslEncryption;
+    }
+    */
+
+    Restrictions restrictions;
+    Authorization authorization;
+
 
 
     //List<SessionFilter> socks5ProxySessionFilters = new ArrayList<>();
     //List<User> socks5ProxyUsers = new ArrayList<>();
     //SocksProxy socks5Proxy = null;
     //SSLConfiguration socks5ProxySslConfiguration = null;
-    @Data
-    //@ConfigurationProperties(prefix = "socks5Proxy.restrictions")
-    public class Restrictions {
 
-        List<InetAddress> whiteList;
-        List<InetAddress> blackList;
+    public Socks5ProxyProperties copy(Socks5ProxyProperties source) throws Exception{
+        Socks5ProxyProperties copy = new Socks5ProxyProperties();
+        copy.host = source.host;
+        copy.port = source.port;
+        copy.maxConnections = source.maxConnections;
+        copy.bufferSize = source.bufferSize;
+        copy.connectionTimeout = source.connectionTimeout;
+        copy.sslEncryption = source.sslEncryption;
+        copy.restrictions = source.restrictions;
+        copy.authorization = source.authorization;
 
+        return copy;
     }
-
-    @Data
-    //@ConfigurationProperties(prefix = "socks5Proxy.authorization")
-    public class Authorization {
-
-        boolean enabled;
-
-        List<org.prometheus.infrastructure.proxyservice.config.User> users;
-
-        @Data
-        public class User {
-            String name;
-            String password;
-        }
-    }
-
-
-
-
 
 }

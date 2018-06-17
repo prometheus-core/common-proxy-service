@@ -19,21 +19,16 @@ import org.springframework.context.annotation.Configuration;
 //@EnableAutoConfiguration
 //@ComponentScan
 		//("org.prometheus.infrastructure.proxyservice.service","org.prometheus.infrastructure.proxyservice.config")
-//@EnableAutoConfiguration
+@EnableAutoConfiguration
 @SpringBootApplication
 public class ProxyServiceApplication {
 
 	public static final Logger logger = LogManager.getLogger(ProxyServiceApplication.class);
 
 
-	//@Autowired
-	//private Socks5ProxyProperties socks5ProxyProperties;
 
-	//@Autowired
-	//private Socks5ProxyConfig socks5ProxyConfig;
-
-	//@Autowired
-	//private ProxyManagementService proxyManagementService;
+	@Autowired
+	private ProxyManagementService proxyManagementService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(ProxyServiceApplication.class, args);
