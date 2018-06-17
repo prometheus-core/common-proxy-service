@@ -20,12 +20,7 @@
 ## Description
 Generic both FORWARD and REVERSE proxy in pure Java.
 
-The whole system is in the moment implemented as state of art microservice architecture meaning I follow following core patterns:
-- Event sourcing
-- Sagas
-- CQRS
-
-## Features:
+## General features
 - Support FTP, FTPS, SFTP (Socks5), HTTP and HTTPS protocols
 - Exposes both REST (Open API 3.0 standard) and Websocket endpoints secured with OAuth2 as Management API
 - Proxy user authorization
@@ -33,6 +28,20 @@ The whole system is in the moment implemented as state of art microservice archi
 - Man in the middle attack capabilities on custom levels
 - More to be added....early stage
 - Management UI (low priority)
+
+## Detailed Features
+
+### Socks5 Proxy
+
+- [x] Bacis proxy
+- [ ] IP/host white-listing
+- [ ] IP/host black-listing
+- [ ] SSL wrapper around proxy
+- [ ] Authorization
+
+
+
+
 ## Use Cases
 
 Proxy everything.
@@ -50,27 +59,17 @@ Proxy everything.
 | [master] [branch-master]     | [![Build Status](https://travis-ci.org/prometheus-core/common-proxy-service.svg?branch=master)](https://travis-ci.org/prometheus-core/common-proxy-service) |  |
 -->
 
-## Start server
+## Start application
 
 Run with
 
 ```
-mvn package exec:exec
-``
+mvn clean spring-boot:run
+
 
 ## Test
 
 By default, all endpoints are protected by OAuth jwt token verifier. It can be turned off with config change through for development.
-
-
-In order to access the server, there is a long lived token below issued by my
-oauth2 server [light-oauth2](https://github.com/networknt/light-oauth2)
-
-```
-Bearer eyJraWQiOiIxMDAiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJ1cm46Y29tOm5ldHdvcmtudDpvYXV0aDI6djEiLCJhdWQiOiJ1cm46Y29tLm5ldHdvcmtudCIsImV4cCI6MTc5MDAzNTcwOSwianRpIjoiSTJnSmdBSHN6NzJEV2JWdUFMdUU2QSIsImlhdCI6MTQ3NDY3NTcwOSwibmJmIjoxNDc0Njc1NTg5LCJ2ZXJzaW9uIjoiMS4wIiwidXNlcl9pZCI6InN0ZXZlIiwidXNlcl90eXBlIjoiRU1QTE9ZRUUiLCJjbGllbnRfaWQiOiJmN2Q0MjM0OC1jNjQ3LTRlZmItYTUyZC00YzU3ODc0MjFlNzIiLCJzY29wZSI6WyJ3cml0ZTpwZXRzIiwicmVhZDpwZXRzIl19.mue6eh70kGS3Nt2BCYz7ViqwO7lh_4JSFwcHYdJMY6VfgKTHhsIGKq2uEDt3zwT56JFAePwAxENMGUTGvgceVneQzyfQsJeVGbqw55E9IfM_uSM-YcHwTfR7eSLExN4pbqzVDI353sSOvXxA98ZtJlUZKgXNE1Ngun3XFORCRIB_eH8B0FY_nT_D1Dq2WJrR-re-fbR6_va95vwoUdCofLRa4IpDfXXx19ZlAtfiVO44nw6CS8O87eGfAm7rCMZIzkWlCOFWjNHnCeRsh7CVdEH34LF-B48beiG5lM7h4N12-EME8_VDefgMjZ8eqs1ICvJMxdIut58oYbdnkwTjkA
-```
-
-Postman is the best tool to test REST APIs
 
 Add "Authorization" header with value as above token and a dummy message will return from the generated stub.
 
