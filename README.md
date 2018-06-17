@@ -10,7 +10,7 @@
 
 [![Codacy grade](https://img.shields.io/codacy/grade/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-proxy-service)
 [![Codacy coverage](https://img.shields.io/codacy/coverage/e7dc9ed202da4839aa73a8f4f5c65b38.svg?style=plastic)](https://app.codacy.com/app/archenroot/common-proxy-service)
-[![codecov](https://codecov.io/gh/prometheus-core/common-proxy-service/branch/master/graph/badge.svg?style=plastic)](https://codecov.io/gh/prometheus-core/common-proxy-service/branch/master)
+[![codecov](https://codecov.io/gh/prometheus-core/common-proxy-service/branch/master/graph/badge.svg?style=plastic)](https://codecov.io/gh/prometheus-core/common-proxy-service)
 
 [![David](https://img.shields.io/david/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 [![David](https://img.shields.io/david/dev/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)

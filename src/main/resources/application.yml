@@ -1,0 +1,11 @@
+spring.boot.admin.client.url: "http://localhost:8080/admin/"
+management.security.enabled: false
+#management.endpoints.web.exposure.include: "*"
+
+socks5Proxy:
+  host: localhost
+  port: 29001
+  authorization: false
+  maxConnections: 30
+  bufferSize: 1048576
+  connectionTimeout: 60000
