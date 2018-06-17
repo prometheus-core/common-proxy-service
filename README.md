@@ -18,18 +18,11 @@
 [![David](https://img.shields.io/david/peer/prometheus-core/common-proxy-service.svg?style=plastic)](https://github.com/prometheus-core/common-proxy-service)
 
 ## Description
-Generic both FORWARD and REVERSE proxy in pure Java.
+Generic SpringBoot based subsystem to provide both FORWARD and REVERSE proxy for multiple protocols including HTTP, HTTPS, SOCKS5 AND SOCKS5 over SSL. Its functionality make it easy to integrate into microservice architecture as integral part.
+Later will support auditing by using Event sourcing and CQRS patterns and web UI.
 
-## General features
-- Support FTP, FTPS, SFTP (Socks5), HTTP and HTTPS protocols
-- Exposes both REST (Open API 3.0 standard) and Websocket endpoints secured with OAuth2 as Management API
-- Proxy user authorization
-- Ip address white and black listing
-- Man in the middle attack capabilities on custom levels
-- More to be added....early stage
-- Management UI (low priority)
 
-## Detailed Features
+## Features
 
 ### Socks5 Proxy
 
@@ -39,13 +32,15 @@ Generic both FORWARD and REVERSE proxy in pure Java.
 - [ ] SSL wrapper around proxy
 - [ ] Authorization
 
+### Http Proxy
+- [x] Bacis Http proxy server
+- [ ] IP/host white-listing
+- [ ] IP/host black-listing
+- [ ] SSL wrapper around proxy
+- [ ] Authorization
 
 
-
-## Use Cases
-
-Proxy everything.
-
+## Configuration
 
 [travis-home]: https://travis-ci.org/
 [travis-msgpack-tools]: https://travis-ci.org/prometheus-core/common-proxy-service
@@ -61,7 +56,7 @@ Proxy everything.
 
 ## Start application
 
-Run with
+Run with following command from root directory:
 
 ```
 mvn clean spring-boot:run
