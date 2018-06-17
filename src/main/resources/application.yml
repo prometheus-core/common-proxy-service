@@ -1,11 +1,45 @@
-spring.boot.admin.client.url: "http://localhost:8080/admin/"
-management.security.enabled: false
-#management.endpoints.web.exposure.include: "*"
+# General configuration
+name: Common Proxy Service
+environment: dev
 
+spring:
+  profiles: dev
+  boot:
+      admin:
+        client:
+          url: "http://localhost:8080/admin/"
+---
+spring:
+  profiles: prod
+  boot:
+      admin:
+        client:
+          url: "http://localhost:8080/admin/"
+
+management:
+  security:
+    enabled: false
+
+#management.endpoints.web.exposure.include: "*"
+---
 socks5Proxy:
   host: localhost
   port: 29001
-  authorization: false
   maxConnections: 30
   bufferSize: 1048576
   connectionTimeout: 60000
+  sslEncryption: false # not yet supported
+  restrictions:
+    host-white-list:
+      - 1.1.1.1
+      - 2.2.2.2
+    host-black-list:
+      - 1.2.3.4
+      - 5.6.7.8
+  authorization:
+    enabled: false
+    users:
+      - user: user1
+        password: demo
+      - user: user2
+        password: demo

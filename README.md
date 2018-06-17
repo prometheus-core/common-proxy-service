@@ -33,7 +33,7 @@ Generic both FORWARD and REVERSE proxy in pure Java.
 
 ### Socks5 Proxy
 
-- [x] Bacis proxy
+- [x] Bacis Socks5 proxy server
 - [ ] IP/host white-listing
 - [ ] IP/host black-listing
 - [ ] SSL wrapper around proxy

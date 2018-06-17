@@ -1,16 +1,24 @@
 package org.prometheus.infrastructure.proxyservice.config;
 
-import ch.qos.logback.core.net.ssl.SSLConfiguration;
+
 import lombok.Data;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
 import sockslib.server.manager.User;
 import sun.net.SocksProxy;
 
 import java.util.ArrayList;
 import java.util.List;
 
+// Lombok boiler-plate
 @Data
-@ConfigurationProperties(prefix = "socks5proxy")
+@ToString
+// Spring property readings
+@Configuration
+@EnableConfigurationProperties
+@ConfigurationProperties(prefix = "socks5Proxy")
 public class Socks5ProxyConfig {
 
     String host;
@@ -19,6 +27,7 @@ public class Socks5ProxyConfig {
     int maxConnections;
     int bufferSize;
     int connectionTimeout;
+    boolean sslEncryption;
 
 
     //List<SessionFilter> socks5ProxySessionFilters = new ArrayList<>();

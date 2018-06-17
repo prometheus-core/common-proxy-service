@@ -1,5 +1,6 @@
 package org.prometheus.infrastructure.proxyservice.controller;
 
+import org.apache.logging.log4j.LogManager;
 import org.prometheus.infrastructure.proxyservice.service.ProxyManagementService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +17,10 @@ import java.io.IOException;
 @RequestMapping("/api")
 public class ProxyManagementController {
 
-    public static final Logger logger = LoggerFactory.getLogger(ProxyManagementController.class);
+    public static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(ProxyManagementController.class);
 
-    SocksProxyServer proxyServer;
+    private final ProxyManagementService proxyManagementService = new ProxyManagementService();
+
 
     //@Autowired
     //ProxyManagementService userService; //Service which will do all data retrieval/manipulation work
@@ -26,18 +28,12 @@ public class ProxyManagementController {
 
     @RequestMapping("/startSocks5Proxy")
     public void startSocks5Proxy() {
-        proxyServer = SocksServerBuilder.buildAnonymousSocks5Server();
-        try {
-            proxyServer.start();// Creat a SOCKS5 server bind at port 1080
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        proxyManagementService.startSocks5ProxyServer();
     }
 
     @RequestMapping("/stopSocks5Proxy")
     public void stopSocks5Proxy() {
-        proxyServer = SocksServerBuilder.buildAnonymousSocks5Server();
-        proxyServer.shutdown();
+        proxyManagementService.stopSocks5ProxyServer();
 
     }
 
