@@ -32,19 +32,32 @@ Later will support auditing by using Event sourcing and CQRS patterns and web UI
 
 Due to integration of <b>Swagger UI and SpringBoot Admin</b> interfaces service is built on 1.5.14 version of SpringBoot. Once these dependencies gets more stable, I will upgrade to 2.x.
 
+## Dependencies
+
+You must first clone and execute mvn install on your local machine for the following project:
+https://github.com/fengyouchao/sockslib
+
+I am working with other users to make it available within maven public repository to remove this required step. As alternate solution I might pack temporarily the jar within the repository, but it requires some work(time).
 
 ## Features
 
 ### Socks5 Proxy
 
-- [x] Bacis Socks5 proxy server
+- [x] Basic Socks5 proxy server
 - [ ] IP/host white-listing
 - [ ] IP/host black-listing
 - [ ] SSL wrapper around proxy
 - [ ] Authorization
 
 ### Http Proxy
-- [x] Bacis Http proxy server
+- [x] Basic Http proxy server
+- [ ] IP/host white-listing
+- [ ] IP/host black-listing
+- [ ] SSL wrapper around proxy
+- [ ] Authorization
+
+### Https Proxy
+- [ ] Basic Http proxy server
 - [ ] IP/host white-listing
 - [ ] IP/host black-listing
 - [ ] SSL wrapper around proxy
