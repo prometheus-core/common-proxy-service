@@ -51,9 +51,9 @@ public class ProxyManagementService {
 
         try {
             socks5ProxyServer.setBindAddr(InetAddress.getByName(socks5ProxyProperties.getHost()));
-            //socks5ProxyServer.setBindPort(socks5ProxyProperties.getPort());
-           // socks5ProxyServer.setBufferSize(socks5ProxyProperties.getBufferSize());
-          //  socks5ProxyServer.setTimeout(socks5ProxyProperties.getConnectionTimeout());
+            socks5ProxyServer.setBindPort(socks5ProxyProperties.getPort());
+            socks5ProxyServer.setBufferSize(socks5ProxyProperties.getBufferSize());
+            socks5ProxyServer.setTimeout(socks5ProxyProperties.getConnectionTimeout());
 
             socks5ProxyServer.start();// Creat a SOCKS5 server bind at port 1080
         } catch (IOException e) {
