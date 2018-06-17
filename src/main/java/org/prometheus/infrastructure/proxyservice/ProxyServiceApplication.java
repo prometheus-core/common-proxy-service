@@ -1,40 +1,41 @@
 package org.prometheus.infrastructure.proxyservice;
 
 
-import org.prometheus.infrastructure.proxyservice.config.Socks5ProxyConfig;
-import org.prometheus.infrastructure.proxyservice.controller.ProxyManagementController;
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.prometheus.infrastructure.proxyservice.config.Socks5ProxyProperties;
+import org.prometheus.infrastructure.proxyservice.service.ProxyManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.undertow.UndertowBuilderCustomizer;
-import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import java.util.Arrays;
-
 //@EnableAdminServer
+//@EnableConfigurationProperties(Socks5ProxyProperties.class)
+//@Configuration
+//@EnableAutoConfiguration
+//@ComponentScan
+		//("org.prometheus.infrastructure.proxyservice.service","org.prometheus.infrastructure.proxyservice.config")
+//@EnableAutoConfiguration
 @SpringBootApplication
-@Configuration
-@EnableAutoConfiguration
-
 public class ProxyServiceApplication {
 
-	public static final Logger logger = LogManager.getLogger(ProxyManagementController.class);
+	public static final Logger logger = LogManager.getLogger(ProxyServiceApplication.class);
 
 
-	@Autowired
-	private Socks5ProxyConfig socks5ProxyConfig;
+	//@Autowired
+	//private Socks5ProxyProperties socks5ProxyProperties;
+
+	//@Autowired
+	//private Socks5ProxyConfig socks5ProxyConfig;
+
+	//@Autowired
+	//private ProxyManagementService proxyManagementService;
 
 	public static void main(String[] args) {
-
 		SpringApplication.run(ProxyServiceApplication.class, args);
 	}
 

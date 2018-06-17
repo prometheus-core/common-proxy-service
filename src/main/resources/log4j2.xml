@@ -58,7 +58,7 @@
         <Logger name="org.hibernate" level="info" additivity="false"/>
 
 
-        <Root level="info" includeLocation="true">
+        <Root level="debug" includeLocation="true">
             <AppenderRef ref="ConsoleAppender"/>
             <!-- <AppenderRef ref="ROLLING_FILE"/> -->
         </Root>

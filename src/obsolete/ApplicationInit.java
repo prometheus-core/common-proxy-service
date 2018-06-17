@@ -1,9 +1,6 @@
 package org.prometheus.infrastructure.proxyservice.component;
 
 import org.apache.logging.log4j.LogManager;
-import org.prometheus.infrastructure.proxyservice.config.Socks5ProxyConfig;
-import org.prometheus.infrastructure.proxyservice.controller.ProxyManagementController;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
@@ -12,7 +9,7 @@ import org.springframework.stereotype.Component;
  * Created by JavaDeveloperZone on 27-07-2017.
  */
 @Component
-@Order(value = 1)
+//@Order(value = 1)
 public class ApplicationInit implements ApplicationRunner {
 
     public static final org.apache.logging.log4j.Logger logger = LogManager.getLogger(ApplicationInit.class);
